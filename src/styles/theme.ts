@@ -1,74 +1,36 @@
-import { createSystem, defaultConfig, defineConfig } from '@chakra-ui/react';
+import { extendTheme } from '@chakra-ui/react';
 
-const config = defineConfig({
-
-   // 1. THÈME DE BASE
-   theme: {
-    tokens: {
-      // COULEURS PERSONNALISÉES
-      colors: {
-        // Couleur navbar/footer : #D3B8A5 (Beige rosé)
-        primary: {
-          50: { value: '#FAF7F4' },
-          100: { value: '#F2EBE4' },
-          200: { value: '#E8DACD' },
-          300: { value: '#DEC9B9' },
-          400: { value: '#D3B8A5' },  // Navbar/Footer
-          500: { value: '#C8A791' },
-          600: { value: '#B4917A' },
-          700: { value: '#9D7B66' },
-          800: { value: '#7D6251' },
-          900: { value: '#5E4A3D' },
-        },
-
-        // Couleur titres : #D7B175 (Or champagne)
-        gold: {
-          50: { value: '#FBF8F2' },
-          100: { value: '#F5EDDC' },
-          200: { value: '#EEDEC0' },
-          300: { value: '#E4CDA4' },
-          400: { value: '#D7B175' },  // Titres
-          500: { value: '#CDA863' },
-          600: { value: '#B99551' },
-          700: { value: '#9D7D44' },
-          800: { value: '#7D6336' },
-          900: { value: '#5E4A29' },
-        },
-      },
-
-      // POLICES
-      fonts: {
-        heading: { value: `var(--font-montserrat), 'Montserrat', -apple-system, sans-serif` },
-        body: { value: `var(--font-old-standard), 'Old Standard TT', Georgia, serif` },
-      },
+const theme = extendTheme({
+  colors: {
+    primary: {
+      50: "#F5ECE6",
+      100: "#EAD9CC",
+      200: "#D3B8A5",
+      300: "#C7A28F",
+      400: "#B98A75",
+      500: "#9F6F5D",
+      600: "#805848",
+      700: "#604236",
+      800: "#422D24",
+      900: "#281A15",
     },
-   },
-
-    // 2. STYLES GLOBAUX
-  globalCss: {
-    body: {
-      bg: 'white',
-      color: 'black',
-      lineHeight: '1.7',
+    gold: {
+      50: "#F8F1E6",
+      100: "#F1DDC0",
+      200: "#E5C397",
+      300: "#DCAC74",
+      400: "#D7B175",
+      500: "#C2925D",
+      600: "#9F7447",
+      700: "#7D5834",
+      800: "#593C22",
+      900: "#372414",
     },
-    'h1, h2, h3, h4, h5, h6': {
-      color: 'gold.400',
-      fontFamily: 'heading',
-      fontWeight: 'bold',
-    },
-    a: {
-      color: 'gold.400',
-      _hover: {
-        color: 'gold.500',
-        textDecoration: 'none',
-      },
-    },
-    html: {
-      scrollBehavior: 'smooth',
-    },
+  },
+  fonts: {
+    heading: 'Montserrat, sans-serif',
+    body: 'Old Standard TT, serif',
   },
 });
 
-export const system = createSystem(defaultConfig, config);
-
-export default system;
+export default theme;
