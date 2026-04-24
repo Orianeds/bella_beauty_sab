@@ -1,13 +1,10 @@
 import { Accordion, Box, Heading, VStack } from '@chakra-ui/react';
 import { FaqItem } from './FaqItem';
-import { FaqQuestion } from '@/constants/faq';
+import { FaqCategoryBlockProps } from '@/dto/faq/faq.types';
 
-interface Props {
-  title: string;
-  questions: FaqQuestion[];
-}
 
-export function FaqCategoryBlock({ title, questions }: Props) {
+
+export function FaqCategoryBlock({ title, questions }: FaqCategoryBlockProps) {
   return (
     <Box>
       <Heading

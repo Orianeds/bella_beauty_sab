@@ -23,7 +23,8 @@ export function ContactForm() {
     e.preventDefault();
     setLoading(true);
 
-    const formData = new FormData(e.currentTarget);
+    const form = e.currentTarget;
+    const formData = new FormData(form);
     const payload = Object.fromEntries(formData.entries());
 
     const res = await fetch('/api/contact', {
@@ -40,7 +41,7 @@ export function ContactForm() {
         status: 'success',
         duration: 4000,
       });
-      e.currentTarget.reset();
+      form.reset();
     } else {
       toast({
         title: 'Erreur',

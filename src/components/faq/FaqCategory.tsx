@@ -2,17 +2,8 @@
 
 import { Box, Heading, Accordion, VStack } from "@chakra-ui/react";
 import { FaqItem } from "./FaqItem";
+import { FaqCategoryProps } from "@/dto/faq/faq.types";
 
-interface Question {
-  id: string;
-  question: string;
-  answer: string;
-}
-
-interface FaqCategoryProps {
-  title: string;
-  questions: Question[];
-}
 
 export function FaqCategory({ title, questions }: FaqCategoryProps) {
   return (

@@ -5,6 +5,7 @@ import { FaFacebookF, FaInstagram, FaWhatsapp } from "react-icons/fa";
 import Image from "next/image";
 import Link from "next/link";
 import { siteInfo, footerLinks, copyright } from "@/constants/content";
+import { BookingButtons } from "../ui/BookingButtons";
 
 const Footer = () => {
     const currentYear = new Date().getFullYear();
@@ -27,18 +28,22 @@ const Footer = () => {
                 >
                     {/* Logo */}
                     <VStack align={{ base: 'center', md: 'flex-start'}} spacing={3} flex={1}>
-                        <Image
-                            src="/images/logo.png" 
-                            alt="logo"
-                            width={150}
-                            height={90} 
-                            style={{ objectFit: "contain" }} />
+                        <Link href="/" style={{ textDecoration: 'none' }} aria-label="Retour à l'accueil">
+                            <Image 
+                                src="/images/logo.png" 
+                                alt="Bella Beauty Sab – Logo"
+                                width={150}
+                                height={90} 
+                                style={{ objectFit: "contain" }}
+                                priority
+                            />
+                        </Link>
                     </VStack>
 
                     {/* Adresse */}
                     <VStack align={{ base: 'center', md: 'flex-start'}} spacing={2} flex={1} fontSize="sm">
                         <Text fontWeight="bold" textTransform="uppercase">Adresse</Text>
-                        <Text textAlign={{ base: 'center', md: 'left' }}>
+                        <Text as="address" textAlign={{ base: 'center', md: 'left' }}>
                             {siteInfo.address.street}
                             <br />
                             {siteInfo.address.city}
@@ -128,6 +133,18 @@ const Footer = () => {
                                 </ChakraLink>
                         </HStack>
                     </VStack>
+
+                    {/* Prendre rdv */}
+                    <VStack 
+                        align="center" 
+                        spacing={3} 
+                        flex={1}
+                    >
+                        <Text fontWeight="bold" textTransform="uppercase" fontSize="sm" align="center">
+                            Prendre rdv
+                        </Text>
+                        <BookingButtons variant="footer" />
+                    </VStack>
                 </Flex>
             </Box>
 
@@ -135,43 +152,38 @@ const Footer = () => {
 
             {/* Section légale */}
             <Box bg="primary.500" py={4} px={{ base: 4, md: 8, lg: 12 }}>
-                        <Flex
-                            direction={{base: 'column', md:'row'}}
-                            justify="space-between"
-                            align="center"
-                            gap={4}
-                        >
-                            {/* Copyright */}
-                            <Text fontSize="xs" textAlign={{ base: 'center', md: 'left' }}>
-                             © {copyright.year} {copyright.text}
-                            </Text>
-                            {/* Liens légaux */}
-                            <HStack 
-                            spacing={{ base: 4, md: 6 }} 
-                            fontSize="xs"
-                            flexWrap="wrap"
-                            justify="center"
-                            >
-                            {footerLinks.legal.map((link, index) => (
-                                <Box key={link.href}>
-                                <Link href={link.href} style={{ textDecoration: 'none' }}>
-                                    <Text
-                                    cursor="pointer"
-                                    _hover={{ color: 'gold.200' }}
-                                    transition="color 0.2s"
-                                    >
-                                    {link.label}
-                                    </Text>
-                                </Link>
-                                {index < footerLinks.legal.length - 1 && (
-                                    <Text as="span" mx={2} display={{ base: 'none', md: 'inline' }}>
-                                    •
-                                    </Text>
-                                )}
-                                </Box>
-                            ))}
-                            </HStack>
-                        </Flex>
+                <Flex
+                    direction={{base: 'column', md:'row'}}
+                    justify="space-between"
+                    align="center"
+                    gap={4}
+                >
+                    {/* Copyright */}
+                    <Text fontSize="xs" textAlign={{ base: 'center', md: 'left' }}>
+                        © {copyright.year} {copyright.text}
+                    </Text>
+                    {/* Liens légaux */}
+                    <HStack 
+                    spacing={{ base: 4, md: 6 }} 
+                    fontSize="xs"
+                    flexWrap="wrap"
+                    justify="center"
+                    >
+                    {footerLinks.legal.map((link, index) => (
+                        <Box key={link.href}>
+                            <Link href={link.href} style={{ textDecoration: 'none' }}>
+                                <Text
+                                cursor="pointer"
+                                _hover={{ color: 'gold.200' }}
+                                transition="color 0.2s"
+                                >
+                                {link.label}
+                                </Text>
+                            </Link>
+                        </Box>
+                    ))}
+                    </HStack>
+                </Flex>
             </Box>
         </Box>
     );

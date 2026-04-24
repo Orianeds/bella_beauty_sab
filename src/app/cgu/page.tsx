@@ -7,10 +7,16 @@ export const metadata = {
 
 export default function CguPage() {
   return (
-    <Box py={20}>
+    <Box py={20} fontFamily="heading">
       <Container maxW="container.md">
         <VStack align="start" spacing={6}>
-          <Heading size="xl" color="gold.400">
+          <Heading 
+            size="xl" 
+            color="gold.400"
+            textTransform="uppercase" 
+            textAlign="center"
+            alignSelf="center"
+          >
             Conditions Générales d’Utilisation
           </Heading>
 

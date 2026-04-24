@@ -11,14 +11,15 @@ import {
     Text,
 } from '@chakra-ui/react';
 import { faqCategories } from '@/constants/faq';
-import { siteInfo } from '@/constants/content';
+import { bookingLink, siteInfo } from '@/constants/content';
 import { FaqCategoryBlock } from './FaqCategoryBlock';
 import { FaqContact } from './FaqContact';
+import { BookingButtons } from '../ui/BookingButtons';
 
 export function FaqSection() {
   return (
     <Box maxW="1800px" mx="auto" px={6} py={16}>
-        <Heading mb={12} textAlign="center" color="gold.400">
+        <Heading mb={12} textAlign="center" color="gold.400" fontFamily="body" textTransform="uppercase">
         Foire aux questions
         </Heading>
 
@@ -44,22 +45,9 @@ export function FaqSection() {
             
         </Grid>
 
-     <Box mt={24} textAlign="center" fontFamily="heading">
-        <Text mb={6} fontWeight="large">
-          N'hésitez plus et réservez votre moment !
-        </Text>
-
-        <HStack justify="center" spacing={4}>
-          <Button
-            as="a"
-            href={siteInfo.socialLinks.instagram}
-            target="_blank"
-            colorScheme="gold"
-          >
-            Réserver mon moment
-          </Button>
-        </HStack>
-      </Box>
+     <Box pt={16}>
+      <BookingButtons />
+    </Box>
     </Box>
   );
 }

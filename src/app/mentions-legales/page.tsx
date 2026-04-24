@@ -1,4 +1,5 @@
 import { Box, Container, Heading, Text, VStack } from "@chakra-ui/react";
+import { siteInfo } from "@/constants/content";
 
 export const metadata = {
   title: "Mentions légales – Bella Beauty Sab",
@@ -7,10 +8,15 @@ export const metadata = {
 
 export default function MentionsLegalesPage() {
   return (
-    <Box py={20}>
+    <Box py={20} fontFamily="heading">
       <Container maxW="container.md">
         <VStack align="start" spacing={6}>
-          <Heading size="xl" color="gold.400">
+          <Heading 
+            size="xl" 
+            color="gold.400" 
+            textTransform="uppercase" 
+            textAlign="center"
+            alignSelf="center">
             Mentions légales
           </Heading>
 
@@ -23,11 +29,11 @@ export default function MentionsLegalesPage() {
           <Text>
             <strong>Éditeur du site :</strong><br />
             Bella Beauty Sab<br />
-            Responsable de publication : [Nom Prénom]<br />
-            Statut juridique : [Auto-entrepreneur / SAS]<br />
-            Adresse : [Adresse complète]<br />
-            Email : [Email professionnel]<br />
-            Téléphone : [Numéro]
+            Responsable de publication : Mosbah Sabrina<br />
+            Statut juridique : Auto-entrepreneur<br />
+            Adresse : {siteInfo.address.fullAddress} <br />
+            Email : {siteInfo.email} <br />
+            Téléphone : {siteInfo.phone}
           </Text>
 
           <Text>

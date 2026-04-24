@@ -1,5 +1,6 @@
 'use client';
 
+import { TarifTableProps } from "@/dto/tarifs/tarifs.types";
 import {
   Box,
   Heading,
@@ -13,16 +14,6 @@ import {
   Container,
 } from "@chakra-ui/react";
 import Link from "next/link";
-
-interface TarifItem {
-  name: string;
-  price: string;
-  slug: string;
-}
-
-interface TarifTableProps {
-  tarifs: TarifItem[];
-}
 
 export function TarifTable({ tarifs }: TarifTableProps) {
   return (

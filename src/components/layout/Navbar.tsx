@@ -26,10 +26,11 @@ import { societeLinks } from "@/constants/societeLinks";
           <Link href="/" style={{ textDecoration: 'none' }} aria-label="Retour à l'accueil">
             <Image 
                 src="/images/logo.png" 
-                alt="logo"
+                alt="Bella Beauty Sab – Logo"
                 width={150}
                 height={90} 
                 style={{ objectFit: "contain" }}
+                priority
             />
           </Link>
           
@@ -39,7 +40,6 @@ import { societeLinks } from "@/constants/societeLinks";
                 <Link 
                   href={item.href}
                   style={{ textDecoration: 'none' }}
-                  aria-current={isActive(item.href) ? 'page' : undefined}
                 >
                   <Text
                     cursor="pointer"
@@ -51,14 +51,15 @@ import { societeLinks } from "@/constants/societeLinks";
                     borderBottom={isActive(item.href) ? '2px solid' : 'none'}
                     borderColor="gold.200"
                     pb={1}
+                    aria-current={isActive(item.href) ? 'page' : undefined}
                   >
                     {item.label}
                   </Text>
                 </Link>
               </Box>
-            ))};
+            ))}
 
-                        {/* Menu Société */}
+            {/* Menu Société */}
             <Box as="li">
               <Menu>
                 <MenuButton
@@ -85,7 +86,7 @@ import { societeLinks } from "@/constants/societeLinks";
                   {societeLinks.map((link) => (
                     <MenuItem
                       key={link.href}
-                      as="a"
+                      as={Link}
                       href={link.href}
                       target="_blank"
                       rel="noopener noreferrer"

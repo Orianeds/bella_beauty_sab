@@ -10,6 +10,7 @@ export function ContactSection() {
         textAlign="center"
         color="gold.400"
         textTransform="uppercase"
+        fontFamily="body"
       >
         N’hésitez pas à me contacter
       </Heading>

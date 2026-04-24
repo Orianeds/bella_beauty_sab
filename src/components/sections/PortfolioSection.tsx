@@ -31,7 +31,7 @@ const PortfolioSection = () => {
           </VStack>
 
           <Grid
-            templateColumns={{ base: '1fr', md: 'repeat(2, 1fr)', lg: 'repeat(3, 1fr)' }}
+            templateColumns={{ base: '1fr', md: 'repeat(2, 1fr)', lg: 'repeat(4, 1fr)' }}
             gap={8}
             w="full"
           >
@@ -49,12 +49,33 @@ const PortfolioSection = () => {
                   }}
                 >
                   <Box position="relative" w="full" h="300px">
-                    <NextImage
-                      src={item.before}
-                      alt={`${item.title} - Avant`}
-                      fill
-                      style={{ objectFit: 'cover' }}
-                    />
+                    {item.before?.endsWith('.mp4') ? (
+                      <video
+                        src={item.before}
+                        controls={false}
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                        style={{
+                          width: '100%',
+                          height: '100%',
+                          objectFit: 'contain',
+                          objectPosition: 'center',
+                        }}
+                      />
+                    ) : (
+                      <NextImage
+                        src={item.before}
+                        alt={`${item.title} - Avant`}
+                        fill
+                        style={{
+                          objectFit: 'contain',
+                          objectPosition: 'center',
+                        }}
+                      />
+                    )}
+
                     <Box
                       position="absolute"
                       top={4}
@@ -72,12 +93,33 @@ const PortfolioSection = () => {
                   </Box>
 
                   <Box position="relative" w="full" h="300px">
-                    <NextImage
-                      src={item.after}
-                      alt={`${item.title} - Après`}
-                      fill
-                      style={{ objectFit: 'cover' }}
-                    />
+                    {item.after?.endsWith('.mp4') ? (
+                      <video
+                        src={item.after}
+                        controls={false}
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                        style={{
+                          width: '100%',
+                          height: '100%',
+                          objectFit: 'contain',
+                          objectPosition: 'center',
+                        }}
+                      />
+                    ) : (
+                      <NextImage
+                        src={item.after}
+                        alt={`${item.title} - Après`}
+                        fill
+                        style={{
+                          objectFit: 'contain',
+                          objectPosition: 'center',
+                        }}
+                      />
+                    )}
+
                     <Box
                       position="absolute"
                       top={4}

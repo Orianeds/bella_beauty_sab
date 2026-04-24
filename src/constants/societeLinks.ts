@@ -11,8 +11,4 @@ export const societeLinks = [
     label: "Charte qualité",
     href: "/societe/charte-qualite.pdf",
   },
-    {
-    label: "Test",
-    href: "/societe/test-test.pdf",
-  },
 ];

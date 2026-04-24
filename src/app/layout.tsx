@@ -4,6 +4,7 @@ import { Providers } from './providers';
 import type { ReactNode } from 'react';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
+import { Box } from '@chakra-ui/react';
 
 // Police pour les titres (Montserrat)
 const montserrat = Montserrat({
@@ -23,7 +24,6 @@ const oldStandardTT = Old_Standard_TT({
 export const metadata: Metadata = {
   title: 'Bella Beauty - Formation & Prestations Lissage',
   description: 'Formations professionnelles et prestations de lissage brésilien, botox capillaire et soins capillaires de qualité.',
-  keywords: 'lissage brésilien, formation coiffure, botox capillaire, soins cheveux',
 };
 
 export default function RootLayout({
@@ -33,14 +33,19 @@ export default function RootLayout({
 }) {
   return (
     <html 
-      lang="fr" 
+      lang="fr"
+      suppressHydrationWarning 
       className={`${montserrat.variable} ${oldStandardTT.variable}`}
     >
       <body>
         <Providers>
-          <Navbar />
-          {children}
-          <Footer />
+          <Box minH="100vh" display="flex" flexDirection="column">
+            <Navbar />
+              <Box as='main' flex="1">
+                {children}
+              </Box>
+            <Footer />
+          </Box>
         </Providers>
       </body>
     </html>

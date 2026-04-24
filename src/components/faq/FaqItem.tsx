@@ -8,11 +8,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { AddIcon, MinusIcon } from "@chakra-ui/icons";
-
-interface FaqItemProps {
-  question: string;
-  answer: string;
-}
+import { FaqItemProps } from "@/dto/faq/faq.types";
 
 export function FaqItem({ question, answer }: FaqItemProps) {
   return (

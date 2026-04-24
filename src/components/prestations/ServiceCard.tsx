@@ -1,5 +1,7 @@
 'use client';
 
+import { bookingLink } from "@/constants/content";
+import { ServiceCardProps } from "@/dto/prestation/service.types";
 import {
   Box,
   Button,
@@ -9,18 +11,9 @@ import {
   HStack,
 } from "@chakra-ui/react";
 import Link from "next/link";
+import { BookingButtons } from "../ui/BookingButtons";
 
-interface Service {
-  id: string;
-  slug: string;
-  name: string;
-  description: string;
-  price: string;
-}
 
-interface ServiceCardProps {
-  service: Service;
-}
 
 export function ServiceCard({ service }: ServiceCardProps) {
   return (
@@ -62,43 +55,37 @@ export function ServiceCard({ service }: ServiceCardProps) {
         </Text>
 
         {/* Bas de carte */}
- <HStack justify="space-between" align="center" pt={4}>
-                     <Text
-                         fontSize={{ base: 'lg', md: 'xl' }}
-                         fontWeight="bold"
-                         color="gold.400"
-                         fontFamily="body"
-                         textTransform="uppercase"
-                     >
-                         Tarif : {service.price}
-                     </Text>
+        <VStack pt={4} spacing={4} align="stretch">
 
-                     <HStack spacing={3}>
-                         <Button
-                             as={Link}
-                             href={`/prestations/${service.slug}`}
-                             variant="outline"
-                             colorScheme="gold"
-                             size={{ base: 'sm', md: 'md'}}
-                             fontFamily="heading"
-                             _hover={{
-                                 bg: 'gold.50'
-                             }}
-                         >
-                             En savoir +
-                         </Button>
+          {/* Ligne 1 */}
+          <HStack justify="space-between" align="center">
+            <Text
+              fontSize={{ base: 'lg', md: 'xl' }}
+              fontWeight="bold"
+              color="gold.400"
+              fontFamily="body"
+              textTransform="uppercase"
+            >
+              Tarif : {service.price}
+            </Text>
 
-                         <Button
-                             as={Link}
-                             href="/rdv"
-                             colorScheme="gold"
-                             size={{ base: 'sm', md: 'md' }}
-                             fontFamily="heading"
-                         >
-                             Réserver
-                         </Button>
-                     </HStack>
-                 </HStack>
+            <Button
+              as={Link}
+              href={`/prestations/${service.slug}`}
+              variant="outline"
+              colorScheme="gold"
+              size={{ base: 'sm', md: 'md'}}
+              fontFamily="heading"
+              _hover={{ bg: 'gold.50' }}
+            >
+              En savoir plus sur {service.name}
+            </Button>
+          </HStack>
+
+          {/* Ligne 2 */}
+          <BookingButtons />
+
+        </VStack>  
       </VStack>
     </Box>
   );

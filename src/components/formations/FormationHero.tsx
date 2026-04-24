@@ -1,5 +1,4 @@
-'use client';
-
+import { FormationsHeroProps } from "@/dto/formation/formation.types";
 import {
   Box,
   Heading,
@@ -8,7 +7,8 @@ import {
   Container,
 } from "@chakra-ui/react";
 
-export function FormationsHero({ content }: any) {
+
+export function FormationsHero({ content }: FormationsHeroProps) {
   return (
     <Box bg="primary.50" py={{ base: 12, md: 20 }}>
       <Container maxW="container.lg">
@@ -18,6 +18,7 @@ export function FormationsHero({ content }: any) {
             color="gold.400"
             fontSize={{ base: "3xl", md: "4xl" }}
             textTransform="uppercase"
+            fontFamily="body"
           >
             {content.title}
           </Heading>

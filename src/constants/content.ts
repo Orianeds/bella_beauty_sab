@@ -11,24 +11,27 @@ export const heroContent = {
           description: "Offrez à vos cheveux une douceur et une brillance incomparables avec mes lissages professionnels adaptés à tous les types de cheveux."
         },
         {
-          name: "Épilation au fil",
-          description: "Découvrez la précision et la douceur de cette technique ancestrale pour un visage parfaitement net et lumineux."
+          name: "Soins Botox capillaires (classique & lissant)",
+          description: "Offrez à vos cheveux une réparation en profondeur et une brillance immédiate grâce à mes soins botox : un soin classique pour nourrir et revitaliser, et un soin lissant pour discipliner et réduire les frisottis."
         },
         {
-          name: "Blanchiment dentaire",
-          description: "Obtenez un sourire éclatant grâce à mon traitement de blanchiment dentaire, rapide, efficace et sans douleur."
+          name: "Browlift",
+          description: "Sublimez vos sourcils avec une technique de restructuration qui discipline, redessine et donne un effet naturellement fourni et soigné."
         },
+        {
+          name: "Réhaussement de cils",
+          description: "Ouvrez et intensifiez votre regard grâce à des cils naturellement courbés, rehaussés et teintés pour un effet mascara sans maquillage."
+        }
       ]
     },
 
     whyChooseMe: {
       title: "🔒 Pourquoi me choisir ? ",
-      description: "Avec Bella Beauty Sab, vous bénéficiez de soins de haute qualité réalisés par une professionnelle passionnée. J'utilise des produits de renom, sûrs et adaptés à vos besoins, pour des résultats qui durent. Faites-moi confiance pour révéler la meilleure version de vous-même. /nPrenez rendez-vous dès maintenant et vivez l’expérience d’une beauté sublimée, en toute sérénité. 💖"
+      description: "Avec Bella Beauty Sab, vous bénéficiez de soins de haute qualité réalisés par une professionnelle passionnée. J'utilise des produits de renom, sûrs et adaptés à vos besoins, pour des résultats qui durent. Faites-moi confiance pour révéler la meilleure version de vous-même. \nPrenez rendez-vous dès maintenant et vivez l’expérience d’une beauté sublimée, en toute sérénité. 💖"
     }, 
 
     primaryCTA: {
-        label: "Prendre rendez-vous",
-        href: "/rdv"
+        label: "Prendre rendez-vous"
     },
     secondaryCTA: {
         label: "Découvrir nos formations",
@@ -43,7 +46,7 @@ export const servicesContent = {
     {
       id: 'lissages',
       title: 'Lissages',
-      link: '/lissages',
+      slug: 'lissages',
       services: [
         {
           id: 'lissage-proteine-de-soie',
@@ -68,6 +71,7 @@ export const servicesContent = {
     {
       id: 'botox',
       title: 'Soins Botox',
+      slug: 'soins-botox',
       services: [
         {
           id: 'soin-botox-classique',
@@ -86,11 +90,18 @@ export const servicesContent = {
     {
       id: 'beaute',
       title: 'Beauté',
+      slug: 'rehaussement-de-cils',
       services: [
         {
           id: 'rehaussement-de-cils',
           name: 'Rehaussement de Cils',
           description: 'Un regard magnifié avec des cils naturellement relevés.',
+          icon: 'eye'
+        },
+        {
+          id: 'browlift',
+          name: 'Browlift',
+          description: 'Des sourcils sculptés et redessinés pour un regard sublimé.',
           icon: 'eye'
         }
       ]
@@ -111,11 +122,15 @@ export const trainingContent = {
   programs: [
     {
       name: 'Lissage',
-      duration: '2 jours intensifs',
+      duration: '1 jour',
     },
     {
-      name: 'Extension de cils',
-      duration: '1 jour',
+      name: 'Réhaussement de cils',
+      duration: 'Demi-journée',
+    },
+    {
+      name: 'Browlift',
+      duration: 'Demi-journée',
     },
   ],
   cta: 'Découvrir les formations',
@@ -178,20 +193,26 @@ export const portfolioContent = {
     {
       id: 1,
       title: 'Lissage',
-      before: '/images/portfolio/lissage-after.jpeg',
-      after: '/images/portfolio/lissage-after.jpeg',
+      before: '/images/portfolio/before-after/lissage-before.jpeg',
+      after: '/images/portfolio/before-after/lissage-after.jpeg',
     },
     {
       id: 2,
-      title: 'Blanchiment Dentaire',
-      before: '/images/portfolio/blanchiment-after.jpeg',
-      after: '/images/portfolio/blanchiment-after.jpeg',
+      title: 'Soin botox lissant',
+      before: '/images/portfolio/before-after/soin-botox-lissant-before.jpeg',
+      after: '/videos/portfolio/before-after/soin-botox-lissant-after.mp4',
     },
     {
       id: 3,
+      title: 'Browlift',
+      before: '/images/portfolio/before-after/browlift-before.jpeg',
+      after: '/images/portfolio/before-after/browlift-after.jpeg',
+    },
+    {
+      id: 4,
       title: 'Réhaussement de cils',
-      before: '/images/portfolio/cils-after.jpeg',
-      after: '/images/portfolio/cils-after.jpeg',
+      before: '/images/portfolio/before-after/rehaussement-cils-before.jpeg',
+      after: '/images/portfolio/before-after/rehaussement-cils-after.jpeg',
     },
   ],
   cta: 'Voir toutes les réalisations',
@@ -252,7 +273,7 @@ export const prestationsContent = {
     },
     {
       id: 'beaute',
-      title: 'RÉHAUSSEMENT DE CIL',
+      title: 'BEAUTÉ DU REGARD',
       services: [
         {
           id: 'rehaussement-de-cils',
@@ -260,6 +281,13 @@ export const prestationsContent = {
           name: 'Réhaussement de cils',
           description: 'Notre prestation Réhaussement de cils avec Teinture Noire et Lash Botox met en valeur vos cils naturels pour un regard sublimé, intense et élégant sans maquillage. Le réhaussement vient soulever et courber les cils dès la racine, ouvrant le regard de manière immédiate et donnant un effet recourbé-cils longue tenue. Nous complétons ce soin par : La Teinture Noire, pour un effet mascara naturel dès le réveil, sans maquillage. Le Lash Botox, un soin à base de kératine, vitamines et huiles nourrissantes, qui renforce, hydrate et épaissit les cils, tout en optimisant la courbure et la tenue du réhaussement. Ce combo 3-en-1 offre un résultat plus complet, plus intense et plus dense, pendant 5 et 6 semaines, selon le cycle naturel de vos cils.',
           price: '50 euros',
+        },
+        {
+          id: 'browlift',
+          slug: 'browlift',
+          name: 'Browlift',
+          description: 'Le Browlift est une technique de sculpture des sourcils qui permet de les redessiner, les structurer et les sublimer pour un regard plus ouvert et harmonieux. Ce soin combine lamination, teinture et soin nourrissant pour des sourcils parfaitement définis, denses et naturels. La lamination vient discipliner et fixer les poils dans la direction souhaitée pour un effet sourcils fournis et structurés longue tenue.',
+          price: '25 euros',
         },
       ],
     },
@@ -372,12 +400,28 @@ export const prestationDetailsContent = {
       }
     ],
 
-    images: [
-      '/images/lissages/lissage-1.jpg',
-      '/images/lissages/lissage-2.jpg',
-      '/images/lissages/lissage-3.jpg',
-      '/images/lissages/lissage-4.jpg'
-    ],
+    media: [
+    {
+      type: 'image',
+      src: '/images/portfolio/lissages/lissage-1.jpeg',
+      alt: 'Lissage avant après'
+    },
+    {
+      type: 'image',
+      src: '/images/portfolio/lissages/lissage-2.jpeg',
+      alt: 'Résultat lissage brillance'
+    },
+    {
+      type: 'image',
+      src: '/images/portfolio/lissages/lissage-3.jpeg',
+      alt: 'Résultat lissage brillance'
+    },
+    {
+      type: 'video',
+      src: '/videos/portfolio/lissages/lissage-demo-1.mp4',
+      poster: '/images/lissages/lissage-video-preview.jpg'
+    }
+  ],
 
     testimonials: testimonialsContent.reviews // Tous les avis pour les lissages
   },
@@ -458,11 +502,13 @@ export const prestationDetailsContent = {
       }
     ],
 
-    images: [
-      '/images/soins/botox-1.jpg',
-      '/images/soins/botox-2.jpg',
-      '/images/soins/botox-3.jpg'
-    ],
+    media: [
+    {
+      type: 'video',
+      src: '/videos/portfolio/soins-botox/soin-botox-lissant-demo-1.mp4',
+      poster: '/images/soin-botox/soin-botox-video-preview.jpg'
+    }
+  ],
 
     testimonials: [] // Pas d'avis spécifiques pour les soins botox pour le moment
   },
@@ -555,13 +601,110 @@ export const prestationDetailsContent = {
       ]
     },
 
-    images: [
-      '/images/rehaussement/cils-1.jpg',
-      '/images/rehaussement/cils-2.jpg',
-      '/images/rehaussement/cils-3.jpg'
+    media: [
+    {
+      type: 'image',
+      src: '/images/portfolio/rehaussement-cils/rehaussement-cils-1.jpeg',
+      alt: 'Résultat réhaussement cils'
+    },
+    {
+      type: 'image',
+      src: '/images/portfolio/rehaussement-cils/rehaussement-cils-2.jpeg',
+      alt: 'Résultat réhaussement cils'
+    },
+    {
+      type: 'image',
+      src: '/images/portfolio/rehaussement-cils/rehaussement-cils-3.jpeg',
+      alt: 'Résultat réhaussement cils'
+    },
     ],
 
     testimonials: [] // Pas d'avis spécifiques pour le réhaussement pour le moment
+  },
+  'browlift': {
+    slug: 'browlift',
+    title: 'Browlift',
+    subtitle: 'Des sourcils sculptés pour un regard sublimé',
+    duration: '45 min',
+    priceRange: '25 euros',
+ 
+    introduction: {
+      title: 'Redessinez et sublimez vos sourcils',
+      content: 'Le Browlift est une technique de sculpture des sourcils qui combine lamination, teinture et soin nourrissant pour des sourcils parfaitement définis, denses et naturels. Ce soin permet de corriger, restructurer et embellir vos sourcils pour un regard plus ouvert et harmonieux, sans maquillage.'
+    },
+ 
+    benefits: {
+      title: 'Les bénéfices',
+      list: [
+        'Sourcils redéfinis et structurés',
+        'Regard plus ouvert et harmonieux',
+        'Effet sourcils fournis et naturels',
+        'Tenue longue durée',
+        'Gain de temps au quotidien',
+        'Résultat naturel et personnalisé'
+      ]
+    },
+ 
+    process: {
+      title: 'Le processus',
+      steps: [
+        {
+          title: 'Diagnostic',
+          description: 'Analyse de la forme de votre visage et de vos sourcils pour déterminer la forme idéale.'
+        },
+        {
+          title: 'Nettoyage',
+          description: 'Démaquillage et nettoyage complet de la zone sourcils.'
+        },
+        {
+          title: 'Lamination',
+          description: 'Application de la lotion pour discipliner et fixer les poils dans la direction souhaitée.'
+        },
+        {
+          title: 'Teinture',
+          description: 'Coloration adaptée à votre carnation pour intensifier et définir les sourcils.'
+        },
+        {
+          title: 'Soin nourrissant',
+          description: 'Application d\'un soin à base de kératine et vitamines pour nourrir et fortifier les poils.'
+        },
+        {
+          title: 'Mise en forme finale',
+          description: 'Épilation des poils superflus et finitions pour un résultat impeccable.'
+        }
+      ]
+    },
+ 
+    forWhom: {
+      title: 'À qui s\'adresse ce soin ?',
+      content: 'Idéal pour toutes les personnes qui souhaitent des sourcils plus définis et structurés sans avoir recours au maquillage permanent. Parfait pour les sourcils clairsemés, irréguliers ou indisciplinés. Convient à tous les types de sourcils.'
+    },
+ 
+    maintenance: {
+      title: 'Conseils d\'entretien',
+      tips: [
+        'Ne pas mouiller les sourcils pendant 24h après le soin',
+        'Éviter les produits huileux sur la zone sourcils',
+        'Brosser délicatement les sourcils chaque matin',
+        'Ne pas frotter les yeux',
+        'Utiliser un sérum sourcils pour prolonger les résultats'
+      ]
+    },
+ 
+    media: [
+    {
+      type: 'image',
+      src: '/images/portfolio/browlift/browlift-1.jpeg',
+      alt: 'Résultat browlift'
+    },
+    {
+      type: 'image',
+      src: '/images/portfolio/browlift/browlift-2.jpeg',
+      alt: 'Résultat browlift'
+    },
+    ],
+ 
+    testimonials: []
   }
 };
 
@@ -575,13 +718,21 @@ export const formationsPageContent = {
   trainer: {
     title: "Votre formatrice",
     content: 
-      "Professionnelle passionnée et expérimentée, je vous accompagne pas à pas dans l’apprentissage des techniques de lissage capillaire et de la beauté du regard. Mes formations sont axées sur la pratique, la qualité du geste et la réussite de chaque élève."
+      "Professionnelle passionnée et expérimentée, je vous accompagne pas à pas dans l’apprentissage des techniques de lissage capillaire et de la beauté du regard. Mes formations sont axées sur la pratique, la qualité du geste et la réussite de chaque élève.",
+    ndaNumber: "524 412 589 44"
   },
 
   formations: {
     hair: {
-      title: "Formation Lissage Capillaire",
-      duration: "1.5 jours (présentiel)",
+      id: "hair",
+      title: "Formation Lissage & Soin botox capillaire",
+      duration: "1 jour (présentiel)",
+      price: {
+        withKit: "800 €",
+        withoutKit: "600 €",
+        kitDescription: "Kit inclus : 1L de lissage + lisseur professionnel",
+        paymentInfo: "Paiement en plusieurs fois possible",
+      },
       description: [
         { text: "Jour 1 :", center: true },
         { text: "Matin :", center: true },
@@ -589,39 +740,51 @@ export const formationsPageContent = {
         { text: "Partie théorique avec remise de livret" },
         { text: "Méthodes d'application" },
         { text: "Apprentissage de la fibre capillaire, contre-indications, ..." },
+        { text: "Démonstration sur tête à coiffer" },
 
         { text: "Après-midi:", center: true },
-        { text: "Démonstration" },
         { text: "Initiation au lissage sur modèle" },
         { text: "Debrief et stratégies marketing réseaux sociaux" },
-
-        { text: "Jour 2 (matin) :", center: true },
         { text: "Pratique sur modèle en totale autonomie" },
         { text: "Remise du diplôme et photo souvenir avec élève et modèle (sur autorisation)" },
         { text: "Debrief fin de formation" },
         { text: "Remise du kit complet afin de démarrer directement votre activité" },
       ],
-      price: 
-        "Tarif sur demande. Contactez-moi par téléphone, Instagram ou WhatsApp."
     },
 
     lashes: {
-      title: "Formation Réhaussement de Cils",
-      duration: "1 jour (présentiel)",
+      id: "lashes",
+      title: "Formation Réhaussement de Cils & Teinture",
+      duration: "demi-journée (présentiel)",
+      price: {
+        withoutKit: "450 €",
+        kitDescription: "Les produits pour démarrer votre activité ne sont pas fournis",
+        paymentInfo: null,
+      },
       description: 
-        "Formation complète pour maîtriser le réhaussement de cils et la teinture. Apprentissage théorique et pratique avec accompagnement personnalisé.",
-      price: 
-        "Tarif sur demande. Contactez-moi par téléphone, Instagram ou WhatsApp.",
+        "Formation complète pour maîtriser le réhaussement de cils et la teinture. Apprentissage théorique et pratique (sur modèle) avec accompagnement personnalisé.",
+    },
+    browlift: {
+      id: "browlift",
+      title: "Formation Browlift",
+      duration: "demi-journée (présentiel)",
+      price: {
+        withoutKit: "450 €",
+        kitDescription: "Les produits pour démarrer votre activité ne sont pas fournis",
+        paymentInfo: null,
+      },
+      description: 
+        "Formation complète pour maîtriser le browlift. Apprentissage théorique et pratique (sur modèle) avec accompagnement personnalisé.",
     },
   },
-};
+} as const;
 
 export const siteInfo = {
   name: "Bella Beauty Sab",
   tagline: "Formations",
   phone: "+33 6 47 90 09 26",
   whatsapp: "33647900926",
-  email: "sabrina-mosbah@hotmail.fr",
+  email: "bellabeautysab@hotmail.com",
   address: {
     street: "26 Allée des Lauriers",
     city: "44260 Savenay",
@@ -648,14 +811,15 @@ export const navigationLinks = [
   { label: "Formations", href: "/formations" },
   { label: 'Tarifs', href: '/tarifs' },
   { label: 'Produits', href: '/produits' },
-  { label: "Société", href: "/societe" },
   { label: "FAQ", href: "/faq" },
   { label: "Contact", href: "/contact" },
 ];
 
+export const bookingLink = 
+  "https://calendar.app.google/UXTr26gmDSDziNG36";
+
 export const footerLinks = {
   quick: [
-    { label: "Prendre RDV", href: "/rdv" },
     { label: "FAQ", href: "/faq" },
     { label: "Contact", href: "/contact" },
   ],
@@ -670,3 +834,4 @@ export const copyright = {
   year: new Date().getFullYear(),
   text: "Bella Beauty Sab - Site réalisé par Oriane Da Silva",
 };
+

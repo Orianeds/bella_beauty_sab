@@ -1,3 +1,4 @@
+import { siteInfo } from "@/constants/content";
 import { Box, Container, Heading, Text, VStack } from "@chakra-ui/react";
 
 export const metadata = {
@@ -7,10 +8,15 @@ export const metadata = {
 
 export default function PolitiqueConfidentialitePage() {
   return (
-    <Box py={20}>
+    <Box py={20} fontFamily="heading">
       <Container maxW="container.md">
         <VStack align="start" spacing={6}>
-          <Heading size="xl" color="gold.400">
+          <Heading 
+            size="xl" 
+            color="gold.400"
+            textTransform="uppercase" 
+            textAlign="center"
+            alignSelf="center">
             Politique de confidentialité
           </Heading>
 
@@ -33,7 +39,7 @@ export default function PolitiqueConfidentialitePage() {
             <strong>Droits :</strong><br />
             Conformément au RGPD, vous disposez d’un droit d’accès, de
             rectification et de suppression de vos données.<br />
-            Contact : [Email professionnel]
+            Contact : {siteInfo.email}
           </Text>
 
           <Text>

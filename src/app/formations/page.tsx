@@ -8,6 +8,12 @@ export const metadata: Metadata = {
     title: "Formations professionnelles beauté | Bella Beauty Sab",
     description:
         "Formations professionnelles en lissage capillaire et réhaussement de cils. Apprenez en présentiel avec une formatrice experte. Inscription sur demande.",
+    openGraph: {
+        title: "Formations professionnelles beauté | Bella Beauty Sab",
+        description:
+        "Formations professionnelles en lissage capillaire et réhaussement de cils. Apprenez en présentiel avec une formatrice experte. Inscription sur demande.",
+        type: "website"
+    }
 };
 
 export default function FormationsPage() {

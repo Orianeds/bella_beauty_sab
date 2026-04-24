@@ -1,9 +1,10 @@
 import { NextResponse } from 'next/server';
-import nodemailer from 'nodemailer';
+import { Resend } from 'resend';
+
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(req: Request) {
   const body = await req.json();
-
   const { firstName, lastName, email, subject, message } = body;
 
   if (!email || !message) {
@@ -13,19 +14,10 @@ export async function POST(req: Request) {
     );
   }
 
-  const transporter = nodemailer.createTransport({
-    host: process.env.MAIL_HOST,
-    port: Number(process.env.MAIL_PORT),
-    secure: false,
-    auth: {
-      user: process.env.MAIL_USER,
-      pass: process.env.MAIL_PASS,
-    },
-  });
-
-  await transporter.sendMail({
-    from: `"Contact site" <${process.env.MAIL_USER}>`,
-    to: process.env.MAIL_TO,
+  const { error } = await resend.emails.send({
+    from: 'onboarding@resend.dev', // pour test
+    to: process.env.MAIL_TO!,
+    reply_to: email, // permet de répondre directement à l'expéditeur
     subject: `[Contact] ${subject}`,
     html: `
       <p><strong>Nom :</strong> ${lastName}</p>
@@ -35,6 +27,14 @@ export async function POST(req: Request) {
       <p><strong>Message :</strong><br/>${message}</p>
     `,
   });
+
+  if (error) {
+    console.error('Resend error:', error);
+    return NextResponse.json(
+      { error: 'Erreur lors de l\'envoi de l\'email' },
+      { status: 500 }
+    );
+  }
 
   return NextResponse.json({ success: true });
 }

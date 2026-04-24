@@ -1,5 +1,5 @@
-'use client';
-
+import { bookingLink } from '@/constants/content';
+import { PrestationDetailProps } from '@/dto/prestation/prestation-detail.types';
 import {
   Box,
   Button,
@@ -12,77 +12,12 @@ import {
   ListItem,
   Divider,
   SimpleGrid,
-  Image,
   HStack,
 } from '@chakra-ui/react';
+import Image from "next/image";
 import Link from 'next/link';
-
-interface PrestationVariant {
-  id: string;
-  name: string;
-  shortDescription: string;
-  description: string;
-  benefits: string;
-  price: string;
-  duration: string;
-}
-
-interface PrestationTestimonial {
-  id: number;
-  author: string;
-  rating: number;
-  text: string;
-  date: string;
-}
-
-interface PrestationDetailData {
-  slug: string;
-  title: string;
-  subtitle: string;
-  duration: string;
-  priceRange: string;
-
-  introduction: {
-    title: string;
-    content: string;
-  };
-
-  diagnostic?: {
-    title: string;
-    content: string;
-  };
-
-  benefits: {
-    title: string;
-    list: string[];
-  };
-
-  process: {
-    title: string;
-    steps: {
-      title: string;
-      description: string;
-    }[];
-  };
-
-  forWhom: {
-    title: string;
-    content: string;
-  };
-
-  maintenance?: {
-    title: string;
-    tips: string[];
-  };
-
-  variants?: PrestationVariant[];
-  images: string[];
-  testimonials: PrestationTestimonial[];
-}
-
-interface PrestationDetailProps {
-  prestation: PrestationDetailData;
-}
+import { SmartVideo } from '../ui/SmartVideo';
+import { BookingButtons } from '../ui/BookingButtons';
 
 export function PrestationDetail({ prestation }: PrestationDetailProps) {
   return (
@@ -98,9 +33,7 @@ export function PrestationDetail({ prestation }: PrestationDetailProps) {
             <Text fontWeight="bold" fontFamily="heading">{prestation.priceRange}</Text>
           </HStack>
 
-          <Button as={Link} href="/rdv" colorScheme="gold" fontFamily="heading">
-            Prendre rendez-vous
-          </Button>
+          <BookingButtons />
         </VStack>
       </Box>
 
@@ -108,7 +41,7 @@ export function PrestationDetail({ prestation }: PrestationDetailProps) {
         <Stack spacing={12}>
           {/* INTRODUCTION */}
           <Box>
-            <Heading size="md" mb={4} textTransform="uppercase" textAlign="center" color="primary.400">
+            <Heading as="h2" size="md" mb={4} textTransform="uppercase" textAlign="center" color="primary.400">
               {prestation.introduction.title}
             </Heading>
             <Text fontFamily="heading">{prestation.introduction.content}</Text>
@@ -119,7 +52,7 @@ export function PrestationDetail({ prestation }: PrestationDetailProps) {
             <>
             <Divider />
             <Box>
-              <Heading size="md" mb={4} textTransform="uppercase" textAlign="center" color="primary.400">
+              <Heading as="h2" size="md" mb={4} textTransform="uppercase" textAlign="center" color="primary.400">
                 {prestation.diagnostic.title}
               </Heading>
               <Text fontFamily="heading">{prestation.diagnostic.content}</Text>
@@ -131,7 +64,7 @@ export function PrestationDetail({ prestation }: PrestationDetailProps) {
 
           {/* BÉNÉFICES */}
           <Box>
-            <Heading size="md" mb={4} textTransform="uppercase" textAlign="center" color="primary.400">
+            <Heading as="h2" size="md" mb={4} textTransform="uppercase" textAlign="center" color="primary.400">
               {prestation.benefits.title}
             </Heading>
             <List fontFamily="heading" spacing={2}>
@@ -145,7 +78,7 @@ export function PrestationDetail({ prestation }: PrestationDetailProps) {
 
           {/* PROCESSUS */}
           <Box>
-            <Heading size="md" mb={4} textTransform="uppercase" textAlign="center" color="primary.400">
+            <Heading as="h2" size="md" mb={4} textTransform="uppercase" textAlign="center" color="primary.400">
               {prestation.process.title}
             </Heading>
             <Stack fontFamily="heading" spacing={4}>
@@ -162,7 +95,7 @@ export function PrestationDetail({ prestation }: PrestationDetailProps) {
 
           {/* POUR QUI */}
           <Box>
-            <Heading size="md" mb={4} textTransform="uppercase" textAlign="center" color="primary.400">
+            <Heading as="h2" size="md" mb={4} textTransform="uppercase" textAlign="center" color="primary.400">
               {prestation.forWhom.title}
             </Heading>
             <Text fontFamily="heading">{prestation.forWhom.content}</Text>
@@ -174,7 +107,7 @@ export function PrestationDetail({ prestation }: PrestationDetailProps) {
             <>
               <Divider />
               <Box>
-                <Heading size="md" mb={4} textTransform="uppercase" textAlign="center" color="primary.400">
+                <Heading as="h2" size="md" mb={4} textTransform="uppercase" textAlign="center" color="primary.400">
                   {prestation.maintenance.title}
                 </Heading>
                 <List fontFamily="heading" spacing={2}>
@@ -191,8 +124,8 @@ export function PrestationDetail({ prestation }: PrestationDetailProps) {
           {/* VARIANTES */}
           {prestation.variants && (
             <Box>
-              <Heading size="md" mb={6} textTransform="uppercase" textAlign="center" color="primary.400">
-                Nos formules
+              <Heading as="h2" size="md" mb={6} textTransform="uppercase" textAlign="center" color="primary.400">
+                Mes formules
               </Heading>
 
               <Stack spacing={6}>
@@ -204,7 +137,7 @@ export function PrestationDetail({ prestation }: PrestationDetailProps) {
                     borderRadius="lg"
                     boxShadow="sm"
                   >
-                    <Heading size="sm" mb={2}>
+                    <Heading as="h3" size="sm" mb={2}>
                       {variant.name}
                     </Heading>
 
@@ -224,22 +157,50 @@ export function PrestationDetail({ prestation }: PrestationDetailProps) {
             </Box>
           )}
 
-          {/* IMAGES */}
-          {prestation.images.length > 0 && (
+          {/* MEDIA (images + vidéos) */}
+          {prestation.media?.length > 0 && (
             <Box>
-              <Heading size="md" mb={6} textTransform="uppercase" textAlign="center" color="primary.400">
-                Nos réalisations
+              <Heading as="h2" size="md" mb={6} textAlign="center" color="primary.400">
+                Mes réalisations
               </Heading>
 
               <SimpleGrid columns={{ base: 1, md: 2 }} spacing={4}>
-                {prestation.images.map((src, index) => (
-                  <Image
+                {prestation.media.map((item, index) => (
+                  <Box
                     key={index}
-                    src={src}
-                    alt={`${prestation.title} ${index + 1}`}
-                    borderRadius="lg"
-                    objectFit="cover"
-                  />
+                    borderRadius="12px"
+                    overflow="hidden"
+                    bg="gray.100"
+                    position="relative"
+                    aspectRatio={3 / 2}
+                  >
+                    {item.type === 'image' ? (
+                      <Image
+                        src={item.src}
+                        alt={`${prestation.title} ${index + 1}`}
+                        fill
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        loading="lazy"
+                        style={{ 
+                        objectFit: 'contain',
+                        objectPosition: 'center'
+                      }}
+                      />
+                    ) : (
+                      <Box
+                        borderRadius="12px"
+                        position="relative"
+                        aspectRatio={3 / 2}
+                        bg="black"
+                        overflow="hidden"
+                      >
+                        <SmartVideo
+                          src={item.src}
+                          poster={item.poster}
+                        />
+                      </Box>
+                    )}
+                  </Box>
                 ))}
               </SimpleGrid>
             </Box>
@@ -248,7 +209,7 @@ export function PrestationDetail({ prestation }: PrestationDetailProps) {
           {/* AVIS */}
           {prestation.testimonials.length > 0 && (
             <Box>
-              <Heading size="md" mb={6} textTransform="uppercase" textAlign="center" color="primary.400">
+              <Heading as="h2" size="md" mb={6} textTransform="uppercase" textAlign="center" color="primary.400">
                 Avis clientes
               </Heading>
 

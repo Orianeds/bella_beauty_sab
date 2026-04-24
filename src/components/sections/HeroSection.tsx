@@ -1,8 +1,9 @@
 'use client';
 
-import { heroContent } from "@/constants/content";
+import { bookingLink, heroContent } from "@/constants/content";
 import { Box, Container, Text, Grid, GridItem, Image, Heading, VStack, HStack, Button } from "@chakra-ui/react";
 import Link from "next/link";
+import { BookingButtons } from "../ui/BookingButtons";
 
 const HeroSection = () => {
     return (
@@ -105,34 +106,13 @@ const HeroSection = () => {
                             </Box>
                         </VStack>
 
-                        <HStack
+                        <VStack
                             spacing={4}
                             pt={4}
                             flexWrap="wrap"
                             justify="flex-start"
                         >
-                            <Link href={heroContent.primaryCTA.href}>
-                                <Button
-                                    size="lg"
-                                    bg="primary.400"
-                                    color="white"
-                                    fontFamily="heading"
-                                    fontWeight="600"
-                                    textTransform="uppercase"
-                                    fontSize="sm"
-                                    px={10}
-                                    py={7}
-                                    _hover={{
-                                        bg: 'primary.500',
-                                        transform: 'translateY(-2px)',
-                                        boxShadow: 'lg',
-                                    }}
-                                    transition="all 0.3s"
-                                    w={{ base: 'full', sm: 'auto' }}
-                                >
-                                    {heroContent.primaryCTA.label}
-                                </Button>
-                            </Link>
+                            <BookingButtons />
 
                             <Link href={heroContent.secondaryCTA.href}>
                                 <Button
@@ -155,7 +135,7 @@ const HeroSection = () => {
                                     {heroContent.secondaryCTA.label}
                                 </Button>
                             </Link>
-                        </HStack>
+                        </VStack>
                     </VStack>
                 </GridItem>
 
