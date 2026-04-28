@@ -420,8 +420,28 @@ export const prestationDetailsContent = {
       type: 'video',
       src: '/videos/portfolio/lissages/lissage-demo-1.mp4',
       poster: '/images/lissages/lissage-video-preview.jpg'
+    },
+    {
+      type: 'video',
+      src: '/videos/portfolio/lissages/lissage-demo-2.mp4',
+      poster: '/images/lissages/lissage-video-preview.jpg'
+    },
+    {
+      type: 'video',
+      src: '/videos/portfolio/lissages/lissage-demo-3.mp4',
+      poster: '/images/lissages/lissage-video-preview.jpg'
+    },
+    {
+      type: 'video',
+      src: '/videos/portfolio/lissages/lissage-demo-4.mp4',
+      poster: '/images/lissages/lissage-video-preview.jpg'
+    },
+    {
+      type: 'video',
+      src: '/videos/portfolio/lissages/lissage-demo-5.mp4',
+      poster: '/images/lissages/lissage-video-preview.jpg'
     }
-  ],
+  ] as const,
 
     testimonials: testimonialsContent.reviews // Tous les avis pour les lissages
   },
@@ -507,8 +527,23 @@ export const prestationDetailsContent = {
       type: 'video',
       src: '/videos/portfolio/soins-botox/soin-botox-lissant-demo-1.mp4',
       poster: '/images/soin-botox/soin-botox-video-preview.jpg'
+    },
+    {
+      type: 'video',
+      src: '/videos/portfolio/soins-botox/soin-botox-lissant-demo-2.mp4',
+      poster: '/images/soin-botox/soin-botox-video-preview.jpg'
+    },
+    {
+      type: 'video',
+      src: '/videos/portfolio/soins-botox/soin-botox-lissant-demo-3.mp4',
+      poster: '/images/soin-botox/soin-botox-video-preview.jpg'
+    },
+    {
+      type: 'image',
+      src: '/images/portfolio/soins-botox/soin-botox-lissant-1.jpeg',
+      alt: 'Résultat soin botox lissant'
     }
-  ],
+  ] as const,
 
     testimonials: [] // Pas d'avis spécifiques pour les soins botox pour le moment
   },
@@ -617,7 +652,12 @@ export const prestationDetailsContent = {
       src: '/images/portfolio/rehaussement-cils/rehaussement-cils-3.jpeg',
       alt: 'Résultat réhaussement cils'
     },
-    ],
+    {
+      type: 'image',
+      src: '/images/portfolio/rehaussement-cils/rehaussement-cils-4.jpeg',
+      alt: 'Résultat réhaussement cils'
+    },
+    ] as const,
 
     testimonials: [] // Pas d'avis spécifiques pour le réhaussement pour le moment
   },
@@ -702,7 +742,17 @@ export const prestationDetailsContent = {
       src: '/images/portfolio/browlift/browlift-2.jpeg',
       alt: 'Résultat browlift'
     },
-    ],
+    {
+      type: 'image',
+      src: '/images/portfolio/browlift/browlift-3.jpeg',
+      alt: 'Résultat browlift'
+    },
+    {
+      type: 'image',
+      src: '/images/portfolio/browlift/browlift-4.jpeg',
+      alt: 'Résultat browlift'
+    },
+    ] as const,
  
     testimonials: []
   }
