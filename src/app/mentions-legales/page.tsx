@@ -1,4 +1,4 @@
-import { Box, Container, Heading, Text, VStack } from "@chakra-ui/react";
+import { Box, Container, Heading, Link, Text, VStack } from "@chakra-ui/react";
 import { siteInfo } from "@/constants/content";
 
 export const metadata = {
@@ -38,8 +38,8 @@ export default function MentionsLegalesPage() {
 
           <Text>
             <strong>Hébergement :</strong><br />
-            Hébergeur : [Vercel / OVH]<br />
-            Adresse : [Adresse hébergeur]
+            L'hébergement du site est assuré par la société Vercel Inc., dont le siège social est situé au 340 S Lemon 
+            Ave #4133, Walnut, CA 91789, États-Unis — <Link href="https://vercel.com" isExternal aria-label="Vercel">https://vercel.com </Link>
           </Text>
 
           <Text>

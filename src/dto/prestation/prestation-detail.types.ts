@@ -59,7 +59,7 @@ export interface PrestationDetailType {
   };
 
   variants?: PrestationVariantType[];
-  media: Media[];
+  media: readonly Media[];
   testimonials: PrestationTestimonialType[];
 }
 

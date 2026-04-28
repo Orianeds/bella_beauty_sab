@@ -1,8 +1,11 @@
-export type MediaType = 'image' | 'video';
-
-export interface Media {
-  type: MediaType;
-  src: string;
-  poster?: string;
-  alt?: string;
-}
+export type Media =
+  | {
+      type: 'image';
+      src: string;
+      alt: string; // obligatoire pour accessibilité
+    }
+  | {
+      type: 'video';
+      src: string;
+      poster?: string;
+    };

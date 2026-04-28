@@ -24,6 +24,9 @@ const oldStandardTT = Old_Standard_TT({
 export const metadata: Metadata = {
   title: 'Bella Beauty - Formation & Prestations Lissage',
   description: 'Formations professionnelles et prestations de lissage brésilien, botox capillaire et soins capillaires de qualité.',
+  icons: {
+    icon: '/favicon.ico',
+  },
 };
 
 export default function RootLayout({

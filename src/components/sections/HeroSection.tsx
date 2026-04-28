@@ -1,7 +1,7 @@
 'use client';
 
-import { bookingLink, heroContent } from "@/constants/content";
-import { Box, Container, Text, Grid, GridItem, Image, Heading, VStack, HStack, Button } from "@chakra-ui/react";
+import { heroContent } from "@/constants/content";
+import { Box, Text, Grid, GridItem, Image, Heading, VStack, HStack, Button } from "@chakra-ui/react";
 import Link from "next/link";
 import { BookingButtons } from "../ui/BookingButtons";
 
