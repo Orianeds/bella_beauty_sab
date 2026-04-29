@@ -77,8 +77,13 @@ export function ServiceCard({ service }: ServiceCardProps) {
               size={{ base: 'sm', md: 'md'}}
               fontFamily="heading"
               _hover={{ bg: 'gold.50' }}
+              whiteSpace="normal"
+              textAlign="center"
+              height="auto"
+              py={2}
             >
-              En savoir plus sur {service.name}
+              <Text display={{ base: 'block', md: 'none' }}>En savoir plus</Text>
+              <Text display={{ base: 'none', md: 'block' }}>En savoir plus sur {service.name}</Text>
             </Button>
           </HStack>
 
