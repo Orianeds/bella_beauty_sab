@@ -194,7 +194,7 @@ export const portfolioContent = {
       id: 1,
       title: 'Lissage',
       before: '/images/portfolio/before-after/lissage-before.jpeg',
-      after: '/images/portfolio/before-after/lissage-after.jpeg',
+      after: '/videos/portfolio/before-after/lissage-after.mp4',
     },
     {
       id: 2,

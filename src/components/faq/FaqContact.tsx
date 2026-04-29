@@ -40,10 +40,10 @@ export function FaqContact() {
         </Text>
 
         <HStack spacing={4} pt={2}>
-          <Link href="https://www.instagram.com" color="gold.400" isExternal>
+          <Link href={siteInfo.socialLinks.instagram} color="gold.400" isExternal>
             <FaInstagram />
           </Link>
-          <Link href="https://www.facebook.com" color="gold.400" isExternal>
+          <Link href={siteInfo.socialLinks.facebook} color="gold.400" isExternal>
             <FaFacebook />
           </Link>
         </HStack>
