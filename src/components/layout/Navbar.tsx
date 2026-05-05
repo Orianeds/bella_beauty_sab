@@ -29,7 +29,7 @@ const Navbar = () => {
           {/* Logo */}
           <Link href="/" style={{ textDecoration: 'none' }} aria-label="Retour à l'accueil">
             <Image
-              src="/images/logo-test.png"
+              src="/images/logo.png"
               alt="Bella Beauty Sab – Logo"
               width={150}
               height={90}
