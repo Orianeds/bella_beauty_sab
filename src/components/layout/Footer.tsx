@@ -30,7 +30,7 @@ const Footer = () => {
                     <VStack align={{ base: 'center', md: 'flex-start'}} spacing={3} flex={1}>
                         <Link href="/" style={{ textDecoration: 'none' }} aria-label="Retour à l'accueil">
                             <Image 
-                                src="/images/logo.png" 
+                                src="/images/logo2.png" 
                                 alt="Bella Beauty Sab – Logo"
                                 width={150}
                                 height={90} 

@@ -287,7 +287,7 @@ export const prestationsContent = {
           slug: 'browlift',
           name: 'Browlift',
           description: 'Le Browlift est une technique de sculpture des sourcils qui permet de les redessiner, les structurer et les sublimer pour un regard plus ouvert et harmonieux. Ce soin combine lamination, teinture et soin nourrissant pour des sourcils parfaitement définis, denses et naturels. La lamination vient discipliner et fixer les poils dans la direction souhaitée pour un effet sourcils fournis et structurés longue tenue.',
-          price: '25 euros',
+          price: '50 euros',
         },
       ],
     },
