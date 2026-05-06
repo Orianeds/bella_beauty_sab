@@ -14,8 +14,6 @@ import {
   SimpleGrid,
   HStack,
 } from '@chakra-ui/react';
-import Image from "next/image";
-import { SmartVideo } from '../ui/SmartVideo';
 import { BookingButtons } from '../ui/BookingButtons';
 
 export function PrestationDetail({ prestation, defaultMedia }: PrestationDetailProps) {

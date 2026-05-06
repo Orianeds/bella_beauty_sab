@@ -4,6 +4,7 @@ export interface TarifItem {
     name: string;
     price: string;
     slug: string;
+    mediaId: string;
 }
 
 export function getTarifs(): TarifItem[] {
@@ -12,6 +13,7 @@ export function getTarifs(): TarifItem[] {
             name: service.name,
             price: service.price,
             slug: service.slug,
+            mediaId: service.id,
         }))
     );
 }

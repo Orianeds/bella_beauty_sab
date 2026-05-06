@@ -1,6 +1,4 @@
 'use client';
-
-import { bookingLink } from "@/constants/content";
 import { ServiceCardProps } from "@/dto/prestation/service.types";
 import {
   Box,

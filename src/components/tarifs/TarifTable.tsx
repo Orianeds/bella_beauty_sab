@@ -57,7 +57,7 @@ export function TarifTable({ tarifs }: TarifTableProps) {
                 <Td textAlign="center">
                   <Button
                     as={Link}
-                    href={`/prestations/${tarif.slug}`}
+                    href={`/prestations/${tarif.slug}?media=${tarif.mediaId}`}
                     size="sm"
                     variant="outline"
                     colorScheme="gold"
