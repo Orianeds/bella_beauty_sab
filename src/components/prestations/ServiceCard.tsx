@@ -71,7 +71,7 @@ export function ServiceCard({ service }: ServiceCardProps) {
 
             <Button
               as={Link}
-              href={`/prestations/${service.slug}`}
+              href={`/prestations/${service.slug}?media=${service.id}`}
               variant="outline"
               colorScheme="gold"
               size={{ base: 'sm', md: 'md'}}

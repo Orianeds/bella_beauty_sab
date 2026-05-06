@@ -88,23 +88,32 @@ export const servicesContent = {
       ]
     },
     {
-      id: 'beaute',
-      title: 'Beauté',
+      id: 'rehaussement-de-cils',
+      title: 'rehaussement-de-cils',
       slug: 'rehaussement-de-cils',
-      services: [
+      services:
+      [
         {
           id: 'rehaussement-de-cils',
           name: 'Rehaussement de Cils',
           description: 'Un regard magnifié avec des cils naturellement relevés.',
           icon: 'eye'
-        },
+        }
+      ],
+    },
+    {
+      id: 'browlift',
+      title: 'browlift',
+      slug: 'browlift',
+      services: 
+      [
         {
           id: 'browlift',
           name: 'Browlift',
           description: 'Des sourcils sculptés et redessinés pour un regard sublimé.',
           icon: 'eye'
         }
-      ]
+      ],
     }
   ]
 };
@@ -193,8 +202,8 @@ export const portfolioContent = {
     {
       id: 1,
       title: 'Lissage',
-      before: '/images/portfolio/before-after/lissage-before.jpeg',
-      after: '/videos/portfolio/before-after/lissage-after.mp4',
+      before: '/videos/portfolio/before-after/lissage-before.mp4',
+      after: '/images/portfolio/before-after/lissage-after.jpeg',
     },
     {
       id: 2,
@@ -400,48 +409,85 @@ export const prestationDetailsContent = {
       }
     ],
 
-    media: [
-    {
-      type: 'image',
-      src: '/images/portfolio/lissages/lissage-1.jpeg',
-      alt: 'Lissage avant après'
-    },
-    {
-      type: 'image',
-      src: '/images/portfolio/lissages/lissage-2.jpeg',
-      alt: 'Résultat lissage brillance'
-    },
-    {
-      type: 'image',
-      src: '/images/portfolio/lissages/lissage-3.jpeg',
-      alt: 'Résultat lissage brillance'
-    },
-    {
-      type: 'video',
-      src: '/videos/portfolio/lissages/lissage-demo-1.mp4',
-      poster: '/images/lissages/lissage-video-preview.jpg'
-    },
-    {
-      type: 'video',
-      src: '/videos/portfolio/lissages/lissage-demo-2.mp4',
-      poster: '/images/lissages/lissage-video-preview.jpg'
-    },
-    {
-      type: 'video',
-      src: '/videos/portfolio/lissages/lissage-demo-3.mp4',
-      poster: '/images/lissages/lissage-video-preview.jpg'
-    },
-    {
-      type: 'video',
-      src: '/videos/portfolio/lissages/lissage-demo-4.mp4',
-      poster: '/images/lissages/lissage-video-preview.jpg'
-    },
-    {
-      type: 'video',
-      src: '/videos/portfolio/lissages/lissage-demo-5.mp4',
-      poster: '/images/lissages/lissage-video-preview.jpg'
-    }
-  ] as const,
+    mediaGroups: [
+      {
+        id: "lissage-proteine-de-soie",
+        title: "Lissage Protéine de Soie",
+        items: [
+          {
+            type: "image" as const,
+            src: "/images/portfolio/lissages/proteine/lissage-proteine-1.jpeg",
+          },
+          {
+            type: "video" as const,
+            src: "/videos/portfolio/lissages/proteine/lissage-proteine-demo-1.mp4",
+            poster: "/images/logo2.png"
+          },
+          {
+            type: "video" as const,
+            src: "/videos/portfolio/lissages/proteine/lissage-proteine-demo-2.mp4",
+            poster: "/images/logo2.png"
+          },
+          {
+            type: "video" as const,
+            src: "/videos/portfolio/lissages/proteine/lissage-proteine-demo-3.mp4",
+            poster: "/images/logo2.png"
+          },
+        ],
+      },
+      {
+        id: "lissage-indien",
+        title: "Lissage Indien",
+        items: [
+          {
+            type: "video" as const,
+            src: "/videos/portfolio/lissages/indien/lissage-indien-demo-1.mp4",
+            poster: "/images/logo2.png"
+          },
+          {
+            type: "video" as const,
+            src: "/videos/portfolio/lissages/indien/lissage-indien-demo-2.mp4",
+            poster: "/images/logo2.png"
+          },
+          {
+            type: "video" as const,
+            src: "/videos/portfolio/lissages/indien/lissage-indien-demo-3.mp4",
+            poster: "/images/logo2.png"
+          },
+          {
+            type: "video" as const,
+            src: "/videos/portfolio/lissages/indien/lissage-indien-demo-4.mp4",
+            poster: "/images/logo2.png"
+          },
+        ],
+      },
+      {
+        id: "lissage-tanin",
+        title: "Lissage Tanin",
+        items: [
+          {
+            type: "video" as const,
+            src: "/videos/portfolio/lissages/tanin/lissage-tanin-demo-1.mp4",
+            poster: "/images/logo2.png"
+          },
+          {
+            type: "video" as const,
+            src: "/videos/portfolio/lissages/tanin/lissage-tanin-demo-2.mp4",
+            poster: "/images/logo2.png"
+          },
+          {
+            type: "video" as const,
+            src: "/videos/portfolio/lissages/tanin/lissage-tanin-demo-3.mp4",
+            poster: "/images/logo2.png"
+          },
+          {
+            type: "video" as const,
+            src: "/videos/portfolio/lissages/tanin/lissage-tanin-demo-4.mp4",
+            poster: "/images/logo2.png"
+          },
+        ],
+      },
+    ],
 
     testimonials: testimonialsContent.reviews // Tous les avis pour les lissages
   },
@@ -522,28 +568,58 @@ export const prestationDetailsContent = {
       }
     ],
 
-    media: [
-    {
-      type: 'video',
-      src: '/videos/portfolio/soins-botox/soin-botox-lissant-demo-1.mp4',
-      poster: '/images/soin-botox/soin-botox-video-preview.jpg'
-    },
-    {
-      type: 'video',
-      src: '/videos/portfolio/soins-botox/soin-botox-lissant-demo-2.mp4',
-      poster: '/images/soin-botox/soin-botox-video-preview.jpg'
-    },
-    {
-      type: 'video',
-      src: '/videos/portfolio/soins-botox/soin-botox-lissant-demo-3.mp4',
-      poster: '/images/soin-botox/soin-botox-video-preview.jpg'
-    },
-    {
-      type: 'image',
-      src: '/images/portfolio/soins-botox/soin-botox-lissant-1.jpeg',
-      alt: 'Résultat soin botox lissant'
-    }
-  ] as const,
+    mediaGroups: [
+      {
+        id: "soin-botox-classique",
+        title: "Soin Botox Classique",
+        items: [
+          {
+            type: "image" as const,
+            src: "/images/portfolio/soins-botox/classique/soin-botox-classique-1.jpeg",
+          },
+          {
+            type: "image" as const,
+            src: "/images/portfolio/soins-botox/classique/soin-botox-classique-2.jpeg",
+          },
+          {
+            type: "video" as const,
+            src: "/videos/portfolio/soins-botox/classique/soin-botox-classique-demo-1.mp4",
+            poster: "/images/logo2.png"
+          },
+          {
+            type: "video" as const,
+            src: "/videos/portfolio/soins-botox/classique/soin-botox-classique-demo-2.mp4",
+            poster: "/images/logo2.png"
+          },
+        ],
+      },
+      {
+        id: "soin-botox-lissant",
+        title: "Soin Botox Lissant",
+        items: [
+          {
+            type: "video" as const,
+            src: "/videos/portfolio/soins-botox/lissant/soin-botox-lissant-demo-1.mp4",
+            poster: "/images/logo2.png"
+          },
+          {
+            type: "video" as const,
+            src: "/videos/portfolio/soins-botox/lissant/soin-botox-lissant-demo-2.mp4",
+            poster: "/images/logo2.png"
+          },
+          {
+            type: "video" as const,
+            src: "/videos/portfolio/soins-botox/lissant/soin-botox-lissant-demo-3.mp4",
+            poster: "/images/logo2.png"
+          },
+          {
+            type: "video" as const,
+            src: "/videos/portfolio/soins-botox/lissant/soin-botox-lissant-demo-4.mp4",
+            poster: "/images/logo2.png"
+          },
+        ],
+      },
+    ],
 
     testimonials: [] // Pas d'avis spécifiques pour les soins botox pour le moment
   },
@@ -636,28 +712,34 @@ export const prestationDetailsContent = {
       ]
     },
 
-    media: [
-    {
-      type: 'image',
-      src: '/images/portfolio/rehaussement-cils/rehaussement-cils-1.jpeg',
-      alt: 'Résultat réhaussement cils'
-    },
-    {
-      type: 'image',
-      src: '/images/portfolio/rehaussement-cils/rehaussement-cils-2.jpeg',
-      alt: 'Résultat réhaussement cils'
-    },
-    {
-      type: 'image',
-      src: '/images/portfolio/rehaussement-cils/rehaussement-cils-3.jpeg',
-      alt: 'Résultat réhaussement cils'
-    },
-    {
-      type: 'image',
-      src: '/images/portfolio/rehaussement-cils/rehaussement-cils-4.jpeg',
-      alt: 'Résultat réhaussement cils'
-    },
-    ] as const,
+    mediaGroups: [
+      {
+        id: "rehaussement-de-cils",
+        title: "Réhaussement de cils",
+        items: [
+          {
+            type: 'image' as const,
+            src: '/images/portfolio/rehaussement-cils/rehaussement-cils-1.jpeg',
+            alt: 'Résultat réhaussement cils'
+          },
+          {
+            type: 'image' as const,
+            src: '/images/portfolio/rehaussement-cils/rehaussement-cils-2.jpeg',
+            alt: 'Résultat réhaussement cils'
+          },
+          {
+            type: 'image' as const,
+            src: '/images/portfolio/rehaussement-cils/rehaussement-cils-3.jpeg',
+            alt: 'Résultat réhaussement cils'
+          },
+          {
+            type: 'image' as const,
+            src: '/images/portfolio/rehaussement-cils/rehaussement-cils-4.jpeg',
+            alt: 'Résultat réhaussement cils'
+          },
+        ],
+      },
+    ],
 
     testimonials: [] // Pas d'avis spécifiques pour le réhaussement pour le moment
   },
@@ -731,28 +813,34 @@ export const prestationDetailsContent = {
       ]
     },
  
-    media: [
-    {
-      type: 'image',
-      src: '/images/portfolio/browlift/browlift-1.jpeg',
-      alt: 'Résultat browlift'
-    },
-    {
-      type: 'image',
-      src: '/images/portfolio/browlift/browlift-2.jpeg',
-      alt: 'Résultat browlift'
-    },
-    {
-      type: 'image',
-      src: '/images/portfolio/browlift/browlift-3.jpeg',
-      alt: 'Résultat browlift'
-    },
-    {
-      type: 'image',
-      src: '/images/portfolio/browlift/browlift-4.jpeg',
-      alt: 'Résultat browlift'
-    },
-    ] as const,
+    mediaGroups: [
+      {
+        id: "browlift",
+        title: "Browlift",
+        items: [
+          {
+            type: 'image' as const,
+            src: '/images/portfolio/browlift/browlift-1.jpeg',
+            alt: 'Résultat browlift'
+          },
+          {
+            type: 'image' as const,
+            src: '/images/portfolio/browlift/browlift-2.jpeg',
+            alt: 'Résultat browlift'
+          },
+          {
+            type: 'image' as const,
+            src: '/images/portfolio/browlift/browlift-3.jpeg',
+            alt: 'Résultat browlift'
+          },
+          {
+            type: 'image' as const,
+            src: '/images/portfolio/browlift/browlift-4.jpeg',
+            alt: 'Résultat browlift'
+          },
+        ],
+      },
+    ],
  
     testimonials: []
   }

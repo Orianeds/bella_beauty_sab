@@ -53,7 +53,7 @@ const ServicesSection = () => {
                                     <GridItem key={service.id}>
                                         <VStack
                                             as={Link}
-                                            href={`/prestations/${category.slug}`}
+                                            href={`/prestations/${category.slug}?media=${service.id}`}
                                             bg="white"
                                             p={8}
                                             borderRadius="xl"

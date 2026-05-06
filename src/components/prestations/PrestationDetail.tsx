@@ -1,8 +1,8 @@
-import { bookingLink } from '@/constants/content';
+'use client';
 import { PrestationDetailProps } from '@/dto/prestation/prestation-detail.types';
+import { MediaGallery } from "../ui/MediaGallery";
 import {
   Box,
-  Button,
   Container,
   Heading,
   Text,
@@ -15,11 +15,11 @@ import {
   HStack,
 } from '@chakra-ui/react';
 import Image from "next/image";
-import Link from 'next/link';
 import { SmartVideo } from '../ui/SmartVideo';
 import { BookingButtons } from '../ui/BookingButtons';
 
-export function PrestationDetail({ prestation }: PrestationDetailProps) {
+export function PrestationDetail({ prestation, defaultMedia }: PrestationDetailProps) {
+  
   return (
     <Box bg="gray.50" minH="100vh">
       {/* HERO */}
@@ -158,51 +158,16 @@ export function PrestationDetail({ prestation }: PrestationDetailProps) {
           )}
 
           {/* MEDIA (images + vidéos) */}
-          {prestation.media?.length > 0 && (
+          {(prestation.mediaGroups?.length ?? 0) > 0 && (
             <Box>
-              <Heading as="h2" size="md" mb={6} textAlign="center" color="primary.400">
+              <Heading size="md" mb={6} textAlign="center" color="primary.400">
                 Mes réalisations
               </Heading>
 
-              <SimpleGrid columns={{ base: 1, md: 2 }} spacing={4}>
-                {prestation.media.map((item, index) => (
-                  <Box
-                    key={index}
-                    borderRadius="12px"
-                    overflow="hidden"
-                    bg="gray.100"
-                    position="relative"
-                    aspectRatio={3 / 2}
-                  >
-                    {item.type === 'image' ? (
-                      <Image
-                        src={item.src}
-                        alt={`${prestation.title} ${index + 1}`}
-                        fill
-                        sizes="(max-width: 768px) 100vw, 50vw"
-                        loading="lazy"
-                        style={{ 
-                        objectFit: 'contain',
-                        objectPosition: 'center'
-                      }}
-                      />
-                    ) : (
-                      <Box
-                        borderRadius="12px"
-                        position="relative"
-                        aspectRatio={3 / 2}
-                        bg="black"
-                        overflow="hidden"
-                      >
-                        <SmartVideo
-                          src={item.src}
-                          poster={item.poster}
-                        />
-                      </Box>
-                    )}
-                  </Box>
-                ))}
-              </SimpleGrid>
+              <MediaGallery
+                groups={prestation.mediaGroups ?? []}
+                defaultGroupId={defaultMedia}
+              />
             </Box>
           )}
 

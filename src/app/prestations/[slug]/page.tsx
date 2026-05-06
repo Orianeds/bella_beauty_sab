@@ -4,7 +4,8 @@ import { PrestationDetail } from "@/components/prestations/PrestationDetail";
 import { Metadata } from "next";
 
 interface Props {
-    params: { slug: string };
+  params: { slug: string };
+  searchParams: { media?: string };
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -28,8 +29,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-
-export default function PrestationPage({ params }: Props) {
+export default function PrestationPage({ params, searchParams }: Props) {
   const prestation =
     prestationDetailsContent[
       params.slug as keyof typeof prestationDetailsContent
@@ -39,5 +39,10 @@ export default function PrestationPage({ params }: Props) {
     notFound();
   }
 
-  return <PrestationDetail prestation={prestation} />;
+  return (
+    <PrestationDetail
+      prestation={prestation}
+      defaultMedia={searchParams.media}
+    />
+  );
 }

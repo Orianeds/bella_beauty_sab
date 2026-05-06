@@ -1,4 +1,3 @@
-import { Media } from '@/dto/media/media.types';
 
 export interface PrestationVariantType {
   id: string;
@@ -17,6 +16,19 @@ export interface PrestationTestimonialType {
   text: string;
   date: string;
 }
+
+export type MediaItem = {
+  type: "image" | "video";
+  src: string;
+  poster?: string;
+  alt?: string;
+};
+
+export type MediaGroup = {
+  id: string;
+  title: string;
+  items: MediaItem[];
+};
 
 export interface PrestationDetailType {
   slug: string;
@@ -59,10 +71,11 @@ export interface PrestationDetailType {
   };
 
   variants?: PrestationVariantType[];
-  media: readonly Media[];
+  mediaGroups: MediaGroup[];
   testimonials: PrestationTestimonialType[];
 }
 
 export interface PrestationDetailProps {
   prestation: PrestationDetailType;
+  defaultMedia?: string;
 }
