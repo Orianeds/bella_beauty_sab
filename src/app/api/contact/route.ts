@@ -15,7 +15,7 @@ export async function POST(req: Request) {
   }
 
   const { error } = await resend.emails.send({
-    from: 'onboarding@resend.dev', // pour test
+    from: 'Bella Beauty Sab <contact@bellabeautysab.fr>',
     to: process.env.NEXT_PUBLIC_CONTACT_EMAIL!,
     reply_to: email, // permet de répondre directement à l'expéditeur
     subject: `[Contact] ${subject}`,
