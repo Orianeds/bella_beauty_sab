@@ -922,7 +922,7 @@ export const siteInfo = {
   tagline: "Formations",
   phone: "+33 6 47 90 09 26",
   whatsapp: "33647900926",
-  email: "bellabeautysab@hotmail.com",
+  email: process.env.NEXT_PUBLIC_CONTACT_EMAIL,
   address: {
     street: "26 Allée des Lauriers",
     city: "44260 Savenay",
