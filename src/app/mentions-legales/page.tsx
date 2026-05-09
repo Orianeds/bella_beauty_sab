@@ -38,8 +38,8 @@ export default function MentionsLegalesPage() {
 
           <Text>
             <strong>Hébergement :</strong><br />
-            L'hébergement du site est assuré par la société Vercel Inc., dont le siège social est situé au 340 S Lemon 
-            Ave #4133, Walnut, CA 91789, États-Unis — <Link href="https://vercel.com" isExternal aria-label="Vercel">https://vercel.com </Link>
+            L'hébergement du site est assuré par la société Netlify, Inc., dont le siège social est situé au 2325 3rd Street, Suite 296, San Francisco, 
+            CA 94107, États-Unis — <Link href="https://www.netlify.com" isExternal aria-label="Netlify">https://www.netlify.com</Link>
           </Text>
 
           <Text>

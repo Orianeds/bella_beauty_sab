@@ -1,36 +1,101 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ✨ Bella Beauty SAB – Site vitrine
 
-## Getting Started
+Site vitrine développé pour une professionnelle de la beauté spécialisée dans :
+- Lissage capillaire
+- Rehaussement de cils
+- Browlift
 
-First, run the development server:
+👉 Démo en ligne : https://chimerical-crostata-2e9672.netlify.app
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
+---
+
+## 📌 Présentation
+
+Ce projet est un site vitrine moderne réalisé avec **Next.js** et **Chakra UI**.  
+Il a pour objectif de présenter les services d’une technicienne beauté, de mettre en valeur ses réalisations (photos et vidéos) et de permettre une prise de contact simple et rapide.
+
+L’interface a été pensée pour être **esthétique, fluide et entièrement responsive**.
+
+---
+
+## ✨ Fonctionnalités
+
+- Page d’accueil moderne et responsive
+- Présentation des services :
+  - Lissage
+  - Rehaussement de cils
+  - Browlift
+- Galerie photos des réalisations
+- Intégration de vidéos
+- Formulaire de contact
+- Support du thème clair/sombre (`next-themes`)
+- Design responsive (mobile, tablette, desktop)
+
+---
+
+## 🧰 Stack technique
+
+- Next.js 13
+- React 18
+- Chakra UI
+- Framer Motion
+- TailwindCSS (partiel)
+- Resend (envoi d’emails)
+- pnpm (gestionnaire de paquets)
+
+---
+
+## ⚙️ Installation du projet
+
+### 1. Cloner le repository
+git clone https://github.com/ton-utilisateur/nom-du-projet.git
+
+### 2. Accéder au projet
+cd nom-du-projet
+
+### 3. Installer les dépendances
+pnpm install
+
+### 4. Lancer le projet en développement
 pnpm dev
-# or
-bun dev
-```
+👉 Le projet sera disponible sur : http://localhost:3000
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📦 Scripts disponibles
+pnpm dev       # serveur de développement
+pnpm build     # build production
+pnpm start     # serveur production
+pnpm lint      # lint du code
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 🏗️ Build production
+pnpm build
+pnpm start
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📁 Structure du projet
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+/pages → routes Next.js
+/components → composants UI
+/styles → styles globaux
+/public → assets statiques
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📬 Formulaire de contact
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Le formulaire utilise Resend pour l’envoi d’emails.
+Créer un fichier .env.local :
+RESEND_API_KEY=your_api_key
+
+---
+
+## 🚀 Déploiement
+
+Le projet est déployé sur Netlify :
+https://chimerical-crostata-2e9672.netlify.app
+
+
