@@ -21,7 +21,9 @@ export interface FormationCardProps {
 
 export interface FormationsHeroContent {
   title: string;
-  description: string;
+  description: {
+    text: string;
+  }[];
 }
 
 export interface FormationsHeroProps {

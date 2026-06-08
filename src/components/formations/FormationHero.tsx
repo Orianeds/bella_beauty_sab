@@ -1,3 +1,4 @@
+import { formationsPageContent } from "@/constants/content";
 import { FormationsHeroProps } from "@/dto/formation/formation.types";
 import {
   Box,
@@ -23,9 +24,20 @@ export function FormationsHero({ content }: FormationsHeroProps) {
             {content.title}
           </Heading>
 
-          <Text fontSize={{ base: "md", md: "lg" }} color="gray.700" fontFamily="heading">
-            {content.description}
-          </Text>
+          <VStack spacing={2}>
+            {content.description.map((item, index) => (
+              <Text 
+                key={index}
+                fontSize={{ base: "md", md: "lg" }} 
+                color="gray.700" 
+                fontFamily="heading">
+                  {item.text}
+            </Text>
+            ))}
+          </VStack>
+
+          
+          
         </VStack>
       </Container>
     </Box>

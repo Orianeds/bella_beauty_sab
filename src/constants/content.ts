@@ -1,34 +1,18 @@
 
 export const heroContent = {
-    title: "✨ Bienvenue chez Bella Beauty Sab, l'expertise beauté à votre service ! ✨",
-    subtitle_presentation: "Chez Bella Beauty Sab, je crois que chaque personne mérite de se sentir belle et bien dans sa peau. C’est pourquoi je vous offre des soins de qualité, personnalisés et efficaces, pour sublimer votre beauté naturelle.",
+    title: "Bella Beauty Sab - Lissages professionnels, soins capillaires et formations beauté à Savenay",
+    subtitle_presentation: "Sublimez vos cheveux avec des soins experts sans formol ni acide glyoxylique, ou formez-vous à des techniques beauté rentables et recherchées",
     
     services : {
-      title: "💇‍♀️ Mes services :",
       list: [
         {
-          name: "Lissages indiens, tanins et protéine de soie",
-          description: "Offrez à vos cheveux une douceur et une brillance incomparables avec mes lissages professionnels adaptés à tous les types de cheveux."
+          description: "Spécialiste du lissage, du soin botox capillaire et de la beauté du regard, Bella Beauty Sab vous accompagne avec des prestations personnalisées, adaptées à votre nature de cheveux et à vos envies."
         },
         {
-          name: "Soins Botox capillaires (classique & lissant)",
-          description: "Offrez à vos cheveux une réparation en profondeur et une brillance immédiate grâce à mes soins botox : un soin classique pour nourrir et revitaliser, et un soin lissant pour discipliner et réduire les frisottis."
-        },
-        {
-          name: "Browlift",
-          description: "Sublimez vos sourcils avec une technique de restructuration qui discipline, redessine et donne un effet naturellement fourni et soigné."
-        },
-        {
-          name: "Réhaussement de cils",
-          description: "Ouvrez et intensifiez votre regard grâce à des cils naturellement courbés, rehaussés et teintés pour un effet mascara sans maquillage."
+          description: "Que vous souhaitiez sublimer vos cheveux ou vous former à une nouvelle acticité beauté, Sabrina vous transmet son expertise avec douceur, précision et passion."
         }
       ]
     },
-
-    whyChooseMe: {
-      title: "🔒 Pourquoi me choisir ? ",
-      description: "Avec Bella Beauty Sab, vous bénéficiez de soins de haute qualité réalisés par une professionnelle passionnée. J'utilise des produits de renom, sûrs et adaptés à vos besoins, pour des résultats qui durent. Faites-moi confiance pour révéler la meilleure version de vous-même. \nPrenez rendez-vous dès maintenant et vivez l’expérience d’une beauté sublimée, en toute sérénité. 💖"
-    }, 
 
     primaryCTA: {
         label: "Prendre rendez-vous"
@@ -95,7 +79,7 @@ export const servicesContent = {
       [
         {
           id: 'rehaussement-de-cils',
-          name: 'Rehaussement de Cils',
+          name: 'Réhaussement de Cils',
           description: 'Un regard magnifié avec des cils naturellement relevés.',
           icon: 'eye'
         }
@@ -256,7 +240,7 @@ export const prestationsContent = {
           slug: 'lissages',
           name: 'Lissage Tanin',
           description: 'Le lissage au tanin est un soin capillaire innovant et naturel, conçu pour lisser les cheveux tout en respectant leur fibre. À base de tanins végétaux, ce traitement hydrate et nourrit en profondeur, réduisant le volume et les frisottis. Il offre un résultat lisse et soyeux, tout en préservant la santé des cheveux. Ce lissage est idéal pour les cheveux abîmés, crépus ou bouclés, et dure jusqu\'à 6 mois, avec un entretien adapté. Le produit est sans formol et sans acide glyoxylique, ce qui le rend doux et sûr pour tous les types de cheveux.',
-          price: 'à partir 140 €',
+          price: 'à partir de 140 €',
         },
       ],
     },
@@ -849,8 +833,16 @@ export const prestationDetailsContent = {
 export const formationsPageContent = {
   hero: {
     title: "Formations Professionnelles Beauté",
-    description:
-      "Je propose des formations professionnelles en présentiel pour transmettre mon savoir-faire"
+    description: [
+      {text: "Pourquoi se former chez Bella Beauty Sab ?"},
+      {text: "- Petit comité"},
+      {text: "- Pratique sur modèle réel"},
+      {text: "- Accompagnement après formation"},
+      {text: "- Kit possible pour démarrer"},
+      {text: "- Conseils réseaux sociaux"},
+      {text: "- Formation accessible aux débutantes et remise d'une attestation"}
+    ]
+      // "Pourquoi se former chez Bella Beauty Sab ? \n - Petit comité \n - Pratique sur modèle réel \n - Accompagnement après formation \n - Kit possible pour démarrer \n - Conseils réseaux sociaux \n - Formation accessible aux débutantes et remise d'une attestation"
   },
 
   trainer: {
@@ -882,10 +874,10 @@ export const formationsPageContent = {
 
         { text: "Après-midi:", center: true },
         { text: "Initiation au lissage sur modèle" },
-        { text: "Debrief et stratégies marketing réseaux sociaux" },
+        { text: "Débriefing et stratégies marketing réseaux sociaux" },
         { text: "Pratique sur modèle en totale autonomie" },
         { text: "Remise du diplôme et photo souvenir avec élève et modèle (sur autorisation)" },
-        { text: "Debrief fin de formation" },
+        { text: "Débriefing fin de formation" },
         { text: "Remise du kit complet afin de démarrer directement votre activité" },
       ],
     },

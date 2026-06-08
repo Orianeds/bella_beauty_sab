@@ -78,7 +78,7 @@ export function FormationCard({ formation }: FormationCardProps) {
 
                 <Center w="full" pt={4}>
                     <Button as={Link} href="/contact" colorScheme="gold">
-                        Demande d'inscription
+                        Je veux me former
                     </Button>
                 </Center>
 

@@ -12,6 +12,7 @@ import {
   Td,
   Button,
   Container,
+  Text
 } from "@chakra-ui/react";
 import Link from "next/link";
 
@@ -36,6 +37,7 @@ export function TarifTable({ tarifs }: TarifTableProps) {
         boxShadow="md"
         overflowX="auto"
       >
+        
         <Table variant="simple" fontFamily="heading">
           <Thead bg="gray.50">
             <Tr>
@@ -70,6 +72,14 @@ export function TarifTable({ tarifs }: TarifTableProps) {
           </Tbody>
         </Table>
       </Box>
+      <Text
+        fontWeight="bold"
+        textAlign="center"
+        mt={8}
+        fontFamily="heading"
+      >
+        Le tarif final est confirmé après diagnostic selon la longueur, l'épaisseur et le besoin du cheveu.
+      </Text>
     </Container>
   );
 }

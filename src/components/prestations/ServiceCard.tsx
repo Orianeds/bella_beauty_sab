@@ -10,6 +10,7 @@ import {
 } from "@chakra-ui/react";
 import Link from "next/link";
 import { BookingButtons } from "../ui/BookingButtons";
+import { PrestationsButtons } from "../ui/PrestationsButtons";
 
 
 
@@ -86,7 +87,7 @@ export function ServiceCard({ service }: ServiceCardProps) {
           </HStack>
 
           {/* Ligne 2 */}
-          <BookingButtons />
+          <PrestationsButtons />
 
         </VStack>  
       </VStack>

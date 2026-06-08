@@ -16,7 +16,7 @@ export const faqCategories: FaqCategory[] = [
         questions: [
             {
                 question: "Quel type de lissage est le plus adapté à mes cheveux ?",
-                answer: "A votre arrivée sur place, je procède à un diagnostic de vos cheveux et vous présente les options possibles.",
+                answer: "À votre arrivée sur place, je procède à un diagnostic de vos cheveux et vous présente les options possibles.",
             },
 
             {
@@ -26,7 +26,7 @@ export const faqCategories: FaqCategory[] = [
 
             {
                 question: "Puis-je colorer mes cheveux avant ou après un lissage ?",
-                answer: "Moi je conseille de faire la couleur 10-15 jours après le lissage pour éviter d'altérer son effet.",
+                answer: "Il est conseillé d'effectuer une coloration 10 à 15 jours après le lissage afin de préserver le résultat.",
             },
             {
                 question: "A partir de quel âge peut-on faire un lissage professionnel ?",
@@ -45,7 +45,7 @@ export const faqCategories: FaqCategory[] = [
         questions: [
             {
                 question: "En quoi consiste un soin botox capillaire ?",
-                answer: "Mes soins vont retirer les frisottis, donner de la brillance et hydrater, sans repasser forcément par la case lissage. Idéal entre deux lissages pour entretenir le lissage."
+                answer: "Mes soins botox permettent de réduire les frisottis, d'apporter de la brillance et d'hydrater la fibre capillaire, sans forcément passer par un lissage."
             },
             {
                 question: "À quelle fréquence peut-on faire un soin botox ?",

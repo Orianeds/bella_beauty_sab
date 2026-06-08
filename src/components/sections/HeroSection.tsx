@@ -52,26 +52,10 @@ const HeroSection = () => {
                                 {heroContent.subtitle_presentation}
                             </Text>
                             <Box>
-                                <Text 
-                                    fontWeight={700} 
-                                    fontSize={{ base: 'lg', md: 'xl', lg: '2xl' }}
-                                    color="primary.600" mb={3} 
-                                    fontFamily="heading"
-                                >
-                                    {heroContent.services.title}
-                                </Text>
 
                                 <VStack align="flex-start" spacing={3}>
                                     {heroContent.services.list.map((service, index) => (
                                         <Box key={index}>
-                                            <Text 
-                                                fontSize={{ base: 'lg', md: 'xl', lg: '2xl' }}
-                                                fontWeight="700" 
-                                                color="gray.800"
-                                                fontFamily="heading"
-                                            >
-                                                {service.name}
-                                            </Text>
                                             <Text 
                                                 fontSize={{ base: 'lg', md: 'xl', lg: '2xl' }}
                                                 fontFamily="heading"
@@ -82,27 +66,6 @@ const HeroSection = () => {
                                         </Box>
                                     ))}
                                 </VStack>
-                            </Box>
-
-                            <Box>
-                                <Text 
-                                    fontWeight="700" 
-                                    fontSize={{ base: 'lg', md: 'xl', lg: '2xl' }}
-                                    fontFamily="heading"
-                                    color="primary.600" 
-                                    mb={2}
-                                >
-                                    {heroContent.whyChooseMe.title}
-                                </Text>
-
-                                <Text 
-                                    fontSize={{ base: 'lg', md: 'xl', lg: '2xl' }}
-                                    fontFamily="heading"
-                                    color="gray.700" 
-                                    lineHeight="1.7"
-                                >
-                                    {heroContent.whyChooseMe.description}
-                                </Text>
                             </Box>
                         </VStack>
 
@@ -165,7 +128,7 @@ const HeroSection = () => {
                                     justifyContent="center"
                                 >
                                     <Text color="primary.600" fontWeight="bold" fontSize="xl" fontFamily="heading">
-                                        Votre Image ici
+                                        Bella Beauty Sab - Formations et prestations en lissage
                                     </Text>
                                 </Box>
                             }

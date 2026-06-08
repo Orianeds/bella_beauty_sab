@@ -13,8 +13,13 @@ import {
   Divider,
   SimpleGrid,
   HStack,
+  Button,
+  Link,
+  Center
 } from '@chakra-ui/react';
-import { BookingButtons } from '../ui/BookingButtons';
+import { PrestationsButtons } from '../ui/PrestationsButtons';
+import { siteInfo } from '@/constants/content';
+import { StarIcon } from '@chakra-ui/icons';
 
 export function PrestationDetail({ prestation, defaultMedia }: PrestationDetailProps) {
   
@@ -31,7 +36,7 @@ export function PrestationDetail({ prestation, defaultMedia }: PrestationDetailP
             <Text fontWeight="bold" fontFamily="heading">{prestation.priceRange}</Text>
           </HStack>
 
-          <BookingButtons />
+          <PrestationsButtons />
         </VStack>
       </Box>
 
@@ -71,6 +76,34 @@ export function PrestationDetail({ prestation, defaultMedia }: PrestationDetailP
               ))}
             </List>
           </Box>
+
+          <Divider />
+
+          {/* MEDIA (images + vidéos) */}
+          {(prestation.mediaGroups?.length ?? 0) > 0 && (
+            <Box>
+              <Heading size="md" mb={6} textAlign="center" color="primary.400" textTransform="uppercase">
+                Des transformations visibles dès la première prestation
+              </Heading>
+
+              <MediaGallery
+                groups={prestation.mediaGroups ?? []}
+                defaultGroupId={defaultMedia}
+              />
+              
+              <Center w="full" pt={4}>
+                    <Button 
+                     as={Link} 
+                     href={siteInfo.socialLinks.instagram} 
+                     target="_blank" 
+                     colorScheme="gold" 
+                     textTransform="uppercase"
+                    >
+                        Voir plus de résultats sur Instagram
+                    </Button>
+              </Center>
+            </Box>
+          )}
 
           <Divider />
 
@@ -155,25 +188,13 @@ export function PrestationDetail({ prestation, defaultMedia }: PrestationDetailP
             </Box>
           )}
 
-          {/* MEDIA (images + vidéos) */}
-          {(prestation.mediaGroups?.length ?? 0) > 0 && (
-            <Box>
-              <Heading size="md" mb={6} textAlign="center" color="primary.400">
-                Mes réalisations
-              </Heading>
-
-              <MediaGallery
-                groups={prestation.mediaGroups ?? []}
-                defaultGroupId={defaultMedia}
-              />
-            </Box>
-          )}
+          <Divider />
 
           {/* AVIS */}
           {prestation.testimonials.length > 0 && (
             <Box>
               <Heading as="h2" size="md" mb={6} textTransform="uppercase" textAlign="center" color="primary.400">
-                Avis clientes
+                Des résultats visibles, des clientes satisfaites et un accompagnement personnalisé à chaque rendez-vous.
               </Heading>
 
               <SimpleGrid columns={{ base: 1, md: 2 }} spacing={6}>
@@ -185,7 +206,21 @@ export function PrestationDetail({ prestation, defaultMedia }: PrestationDetailP
                     borderRadius="md"
                     boxShadow="sm"
                   >
-                    <Text fontFamily="heading" fontWeight="bold">{review.author}</Text>
+                    <HStack justify="space-between" align="center">
+                      <Text fontFamily="heading" fontWeight="bold">{review.author}</Text>
+
+                      <HStack spacing={1}>
+                        {[...Array(5)].map((_, index) => (
+                          <StarIcon
+                            key={index}
+                            color={index < review.rating ? "gold.400" : "gray.300"}
+                            boxSize={4}
+                          />
+                        ))}
+                      </HStack>
+                    </HStack>
+                    
+
                     <Text fontFamily="heading" fontSize="sm" color="gray.500">
                       {review.date}
                     </Text>
